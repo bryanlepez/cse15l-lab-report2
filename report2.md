@@ -48,4 +48,43 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
   
  ### Picture of Symptoms with Both Tests
  ![Image](symptoms.png)
+ 
+ ### Before and After Fixing Code
+ Before(Buggy Program):
+ ```
+   static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - 1);
+  }
+  ```
+  After(Fixed Program):
+  ```
+    static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    int lowestCounter = 0;
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    for(double num: arr){ // Added this for loop to count the amount of `lowest`.
+      if(num == lowest){  // This allows us to calculate the mean excluding every 'lowest' value within the array.
+        lowestCounter += 1;
+      }
+    }
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - lowestCounter);
+  }
+  ```
+ 
   
