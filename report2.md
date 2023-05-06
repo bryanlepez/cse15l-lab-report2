@@ -96,6 +96,7 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
   }
   ```
   This test will give set `lowestCounter` to 2 since there are two of the `lowest` values which are `1.0`. It then gives us the calculation
-  `return 5.0 / 2;`. This because **3.0 + 2.0 = 5.0** and **4 - 2**. In this previous calcualation **4** is the array length and **2** is the value of `lowestCounter`, the amount of the `lowest` values in the array.
+  `return 5.0 / 2;`. This because `3.0 + 2.0 = 5.0` and `4 - 2 = 2`. In this previous calcualation **4** is the array length and the first **2** is the value of `lowestCounter`, the amount of the `lowest` values in the array.
+ 
  
   
