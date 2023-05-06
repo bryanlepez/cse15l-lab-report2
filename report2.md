@@ -86,5 +86,16 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
     return sum / (arr.length - lowestCounter);
   }
   ```
+  The fix for the program was to account for the amount of `lowest` values within the array and not just one. In order to do this we added a for loop that counts the amount of `lowest` values within the array and sets `lowestCounter` to that amount. After this for loop runs, we then know how many `lowest` values are in the array. This also allows us to fix the calculation that is being returned. Instead of `return sum / (arr.length - 1);` we change it to
+  `return sum / (arr.length - lowestCounter);` which will give us `sum / amount of numbers in the array without any of the lowest values` this will allow us to get the correct mean for the array without the lowest values. For example the test with the fixed program:
+  ```
+    @Test 
+  public void testAverage(){
+    double[] input1 = {1.0, 2.0, 3.0, 1.0};
+    assertEquals(2.5, ArrayExamples.averageWithoutLowest(input1), 0.001);
+  }
+  ```
+  This test will give set `lowestCounter` to 2 since there are two of the `lowest` values which are `1.0`. It then gives us the calculation
+  `return 5.0 / 2;`. This because **3.0 + 2.0 = 5.0** and **4 - 2**. In this previous calcualation **4** is the array length and **2** is the value of `lowestCounter`, the amount of the `lowest` values in the array.
  
   
