@@ -47,5 +47,5 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
   The test passes with the buggy program because there is only one of the `lowest` numbers within the array which is `1`. Since there is only one of the `lowest` values in the array the calculation would be `5 / (3 - 1)` whihch = `5 / 2` = `2.5`. This is the correct average without the lowest value in the array. It is correct because in this case, since there is only one `lowest` value then the `- 1` in the calculation is correct because there is only one `lowest` value within the array.
   
  ### Picture of Symptoms with Both Tests
- ![Image](
+ ![Image](symptoms.png)
   
