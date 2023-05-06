@@ -36,3 +36,14 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
   array because when it does the calculation `return sum / (arr.length - 1);` it only accounts for one of the `lowest` numbers within the array instead of both.
   This results in the calculation being `5 / (4 - 1)` which = `5 / 3` = `1.666666666667`.
   
+  The program works fine when there is only one `lowest` number within the array. An example of a test that does not induce a failure would be:
+  ```
+    @Test
+  public void testAverage2(){
+    double[] input1 = {1.0, 2.0, 3.0};
+    assertEquals(2.5, ArrayExamples.averageWithoutLowest2(input1), 0.001);
+  }
+  ```
+  The test passes with the buggy program because there is only one of the `lowest` numbers within the array which is `1`. Since there is only one of the `lowest` values in the array the calculation would be `5 / (3 - 1)` whihch = `5 / 2` = `2.5`. This is the correct average without the lowest value in the array. It is correct because in this case, since there is only one `lowest` value then the `- 1` in the calculation is correct because there is only one `lowest` value within the array.
+  
+  
