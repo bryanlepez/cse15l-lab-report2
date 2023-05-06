@@ -98,5 +98,7 @@ The buggy program that I will be using is the `averageWithoutLowest` method. The
   This test will give set `lowestCounter` to 2 since there are two of the `lowest` values which are `1.0`. It then gives us the calculation
   `return 5.0 / 2;`. This because `3.0 + 2.0 = 5.0` and `4 - 2 = 2`. In this previous calcualation **4** is the array length and the first **2** is the value of `lowestCounter`, the amount of the `lowest` values in the array.
  
+## Part 3: Something I Learned
+One thing that I learned in this lab is how to write JUnit tests for Arrays and doubles. Previously I didn't know how to write JUnit tests for methods that returned arrays but now I do which is something like this `assertArrayEquals(new int[]{1, 2, 3}, ArrayExamples.reversed(input2));`. Before I only knew how to write JUnit tests for methods that returned integers. Same thing goes for writing JUnit tests for methods that returned doubles. I now know that they look something like this `assertEquals(2.5, ArrayExamples.averageWithoutLowest(input1), 0.001);`. Before I knew this I tried simply writing it like an integer JUnit test, but I failed to realize that for doubles you have to include `0.001` at the end like in the example above.
  
   
