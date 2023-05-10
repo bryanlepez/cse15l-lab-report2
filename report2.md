@@ -1,3 +1,22 @@
+## Part 1: String Server
+This is the code that I wrote in order to create my StringServer. The StringServer program creates a server that allows you to add a message to the screen. The code for the program follows:
+
+![Image](stringcode.png)
+
+The program takes a string and adds on to that same string, but every time something is added, it is added onto a new line. When the Server is started with StringServer the `.start` method is called on `Server` which takes a port value and a `new Handler()`. In the cases below the value of `int port` = **9109** since that is the port we chose when we compiled and ran the server. When the server is first started there is a value `new URI(http://localhost:9109)` which is automatically passed into the `handleRequest(URI url)` method. `url` = the new url that we just created previously. The value of `String text` defaults to a value of `""` which is an empty string. 
+
+These are the values when the server is initially started.
+
+Here is an example of adding a message with the program:
+![Image](firstss.png)
+
+When this program is run with a `url` value of `new URI(http://localhost:9109/add-message?s=Hello` then the values within the method body change. First, the methods `getPath` and `equals` are called on the url which looks like `url.getPath.equals(/add-message)` this gives us the path of the `url` which is `/add-message` and the **.equals** checks if it is equal to "/add-message". In the same line of code(13) we call the `getQuery` method on the same `url` which gives us a value of `?s=Hello`. Then a new string array is created which is `String[] parameters`. The value for this string array will be obtained from the following method call on the url value: `url.getQuery().split("=")`.
+This will give the `parameters` string array a value of `{"?s", Hello}`. This will then give a value to `text` which is going to be `text + parameters[1]`. The `text` value is set by giving the original `text` value which at this point is `""` + `parameters[1]` which is `Hello` in this case and then it also adds a new line by doing `+ "\n"`
+
+
+
+In this case there is several different methods and values being changed. When the program is ran with the above url after the server is started
+
 ## Part 2: Choosing A Bug From Lab 3
 The buggy program that I will be using is the `averageWithoutLowest` method. The buggy version of this program looks like this:
 ```
