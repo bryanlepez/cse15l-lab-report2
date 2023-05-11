@@ -17,12 +17,14 @@ Hello
                        // this is an empty line
 ```
 ![Image](secondss.png)
-When we add "How Are You" this program is run with a `url` value of `new URI(http://localhost:9109/add-message?s=How Are You` then the values within the method body change once again. First, the methods `getPath` and `equals` are called on the url which lookes like `url.getPath.equals(/add-message)` this gives us the path of the `url` which is `/add-message` and the **.equals** checks if it is equal to "/add-message". In ht esame line of code(13) we call the `getQuery` method on the same `url` which gives us a value of `?s=How Are You`. Then a new string array is created which is `String[] parameters`. The value for this string array will be obtained from the following method call on the url value:
+When we add "How Are You" this program is run with a `url` value of `new URI(http://localhost:9109/add-message?s=How are you` then the values within the method body change once again. First, the methods `getPath` and `equals` are called on the url which lookes like `url.getPath.equals(/add-message)` this gives us the path of the `url` which is `/add-message` and the **.equals** checks if it is equal to "/add-message". In ht esame line of code(13) we call the `getQuery` method on the same `url` which gives us a value of `?s=How Are You`. Then a new string array is created which is `String[] parameters`. The value for this string array will be obtained from the following method call on the url value:
 `url.getQuery().split("=")`
-This will give the `parameters` string array a value of `{"?s", "How Are You"}`. This will then give a value to `text` which is going to be `text + parameters[1] + "\n"`. The `text` value is set by giving the origial `text` value which at this point is `"Hello"`, due to the previous handle request, + `parameters[1]` which is "How are you"
-
-
-In this case there is several different methods and values being changed. When the program is ran with the above url after the server is started
+This will give the `parameters` string array a value of `{"?s", "How are you"}`. This will then give a value to `text` which is going to be `text + parameters[1] + "\n"`. The `text` value is set by giving the origial `text` value which at this point is `"Hello"`, due to the previous handle request, + `parameters[1]` which is "How are you" + `"\n"` which is a new line. At the end of this request `text` is equal to:
+```
+Hello
+How are you
+                    // this is an empty line
+```
 
 ## Part 2: Choosing A Bug From Lab 3
 The buggy program that I will be using is the `averageWithoutLowest` method. The buggy version of this program looks like this:
