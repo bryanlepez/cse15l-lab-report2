@@ -1,3 +1,5 @@
+# Lab Report 2
+
 ## Part 1: String Server
 This is the code that I wrote in order to create my StringServer. The StringServer program creates a server that allows you to add a message to the screen. The code for the program follows:
 
